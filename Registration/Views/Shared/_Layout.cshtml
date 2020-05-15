@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Profit Factory | Auto Trading Software">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4184dd" />
+    <!-- Site Properties -->
+    <title>Profit Factory</title>
+    <link rel="shortcut icon" href="/graph.png" type="~/HomeStyle/image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/HomeStyle/css/uikit.css">
+    <link rel="stylesheet" href="~/HomeStyle/css/style.css">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    @await Component.InvokeAsync("Header")
+    <main>
+        @RenderBody()
+    </main>
+    @await Component.InvokeAsync("Footer")
+    <!-- Javascript -->
+    <script src="~/HomeStyle/js/vendor/uikit.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/jquery.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/in-core.js"></script>
+    <script src="~/HomeStyle/js/config.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5ea8318635bcbb0c9ab57371/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

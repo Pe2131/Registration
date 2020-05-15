@@ -1,0 +1,182 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "SubmitOrder";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Premium HTML Template by Indonez">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4184dd" />
+    <!-- Site Properties -->
+    <title>SubmitOrder</title>
+    <link rel="shortcut icon" href="/graph.png" type="~/HomeStyle/image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/HomeStyle/css/uikit.css">
+    <link rel="stylesheet" href="~/HomeStyle/css/style.css">
+    <link rel="stylesheet" href="~/build/css/countrySelect.css">
+    <!--int Country Code -->
+    <link rel="stylesheet" href="~/countryCode/css/intlTelInput.css">
+    <!--End Country Code-->
+    <style>
+        .country-select {
+            display: block;
+        }
+        .iti{
+            display:block;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- section content begin -->
+        <div class="uk-section uk-padding-remove-vertical">
+            <div class="uk-container uk-container-expand">
+                <div class="uk-grid" data-uk-height-viewport="expand: true">
+                    <div class="uk-width-3-5@m uk-background-secondary uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge" style="background-image: url(../HomeStyle/img/login.jpg);">
+
+
+                    </div>
+                    <div class="uk-width-expand@m uk-flex uk-flex-middle">
+                        <div class="uk-width-1-1 uk-flex uk-flex-center">
+                            <div class="uk-width-3-5@m">
+                                <div class="uk-text-center in-padding-horizontal@s">
+                                    <a class="uk-logo uk-align-center uk-margin-remove-bottom" href="/Home">
+                                        <img src="~/HomeStyle/img/@ViewBag.logo" data-src="/HomeStyle/img/@ViewBag.logo" width="120" height="54" alt="logo" data-uk-img>
+                                    </a>
+                                    <p class="uk-text-lead uk-margin-small-top uk-margin-medium-bottom">Order Your Auto Trading Software</p>
+                                    <!-- login form begin -->
+                                    <div asp-validation-summary="All" class="text-danger" style=" color:red;"></div>
+                                    <form action="/Home/SubmitOrder" method="post" id="login-form" class="uk-grid uk-form toggle-class">
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-user fa-sm"></span>
+                                            <input class="uk-input" name="FullName" id="username" value="" type="text" placeholder="Name/Surname" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-edit fa-sm"></span>
+                                            <input class="uk-input" name="Email" value="" type="email" placeholder="Email" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-phone fa-sm"></span>
+                                            <input class="uk-input" name="Mobile" id="phone" value="" type="tel" placeholder="Mobile" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-code fa-sm"></span>
+                                            <input class="uk-input" name="Account" value="" type="text" placeholder="MT4 Acc Number1" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            @*<span class="uk-form-icon uk-form-icon-flip fas fa-city fa-sm"></span>*@
+                                            <input class="uk-input" name="Country" id="country" value="" type="text" placeholder="Country" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            @*<span class="uk-form-icon uk-form-icon-flip fas fa-city fa-sm"></span>*@
+                                            <input name="PayStatus" value=1 id="year" type="radio">
+                                            <label for="year">Yearly(999€)</label>
+                                            <input name="PayStatus" value=0 id="month" type="radio">
+                                            <label for="month">Monthly(99€)</label>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline" id="a2">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-code fa-sm"></span>
+                                            <input class="uk-input" name="Account2" value="" type="text" placeholder="MT4 Acc Number2">
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1">
+                                            <input id="ploicy" type="checkbox" />I accept and agree to the <a href="/Home/Policy" target="_blank">Terms of Use</a>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1">
+                                            <button class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left" id="buttonsignin" type="submit" name="submit" disabled>Order Now</button>
+                                        </div>
+                                    </form>
+                                    <br />
+                                    <div style="font-size:18px;font-weight:bold;color:#0d508b;">
+                                         @Html.Raw(ViewBag.Code)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section content end -->
+    </main>
+
+    <!-- Javascript -->
+    <script src="~/HomeStyle/js/vendor/uikit.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/jquery.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/in-core.js"></script>
+    <script src="~/HomeStyle/js/config.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/build/js/countrySelect.min.js"></script>
+    <script>
+        $("#country").countrySelect();
+    </script>
+    <!--for country code -->
+
+    <script src="~/countryCode/js/intlTelInput.js"></script>
+    <script>
+        var input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            // allowDropdown: false,
+            autoHideDialCode: false,
+            // autoPlaceholder: "off",
+            // dropdownContainer: document.body,
+            // excludeCountries: ["us"],
+            // formatOnDisplay: false,
+            //geoIpLookup: function (callback) {
+            //    $.get("http://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+            //        var countryCode = (resp && resp.country) ? resp.country : "";
+            //        callback(countryCode);
+            //    });
+            //},
+            //hiddenInput: "full_number",
+            //initialCountry: "auto",
+            // localizedCountries: { 'de': 'Deutschland' },
+            // nationalMode: false,
+            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            // placeholderNumberType: "MOBILE",
+            // preferredCountries: ['cn', 'jp'],
+            // separateDialCode: true,
+            utilsScript: "../countryCode/js/intlTelInput.js",
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var type =@ViewBag.type;
+            if (type== 0) {
+                $("#month").prop("checked", true);
+                $("#a2").hide('slow');
+            }
+            else {
+                $("#year").prop("checked", true);
+                $("#a2").show('slow');
+            }
+            $('input[type="radio"]').click(function () {
+                if ($(this).attr("value") == 0) {
+                    $("#a2").hide('slow');
+                }
+                if ($(this).attr("value") == 1) {
+                    $("#a2").show('slow');
+
+                }
+            });
+            $("#ploicy").click(function () {
+                var checked_status = this.checked;
+                if (checked_status == true) {
+                    $("#buttonsignin").removeAttr("disabled");
+                } else {
+                    $("#buttonsignin").attr("disabled", "disabled");
+                }
+            });
+            //$('input[type="radio"]').trigger('click');  // trigger the event
+        });
+    </script>
+    <!--end country code -->
+</body>
+</html>

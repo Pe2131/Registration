@@ -1,0 +1,132 @@
+﻿@model DAL.Models.Tb_Setting
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-example-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="form-example-wrap">
+                    <div class="cmp-tb-hd">
+                        <h2>Basic Example</h2>
+                        <p>
+                            @*Individual form controls automatically receive some global styling. All textual 'input', 'textarea', and 'select' elements with <code>.form-control</code> are set to width: 100%; by default. Wrap labels and controls in <code>.form-group</code> for optimum
+                                spacing.*@
+                        </p>
+                    </div>
+                    <form asp-action="Index">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Logo" class="control-label"></label>
+                            <input type="file" name="File" class="form-control" />
+                            <span asp-validation-for="Logo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Footer" class="control-label"></label>
+                            <textarea asp-for="Footer" rows="5" class="form-control">@Model.Footer</textarea>
+                            <span asp-validation-for="Footer" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TradePrice" class="control-label"></label>
+                            <input asp-for="TradePrice" class="form-control" />
+                            <span asp-validation-for="TradePrice" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title1" class="control-label">Plans Title</label>
+                            <input asp-for="Title1" class="form-control" />
+                            <span asp-validation-for="Title1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Text1" class="control-label">Plans Text</label>
+                            <input asp-for="Text1" class="form-control" />
+                            <span asp-validation-for="Text1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title3" class="control-label">why Should Title</label>
+                            <input asp-for="Title3" class="form-control" />
+                            <span asp-validation-for="Title3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Text3" class="control-label">why Should Title</label>
+                            <input asp-for="Text3" class="form-control" />
+                            <span asp-validation-for="Text3" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title4" class="control-label">how start Title</label>
+                            <input asp-for="Title4" class="form-control" />
+                            <span asp-validation-for="Title4" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Text4" class="control-label">how start Text</label>
+                            <input asp-for="Text4" class="form-control" />
+                            <span asp-validation-for="Text4" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Steps" class="control-label">Steps(split by *)</label>
+                            <textarea asp-for="Steps" rows="5" class="form-control"></textarea>
+                            <span asp-validation-for="Steps" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="StepLinks" class="control-label">Steps links(split by ,)</label>
+                            <textarea asp-for="StepLinks" rows="5" class="form-control"></textarea>
+                            <span asp-validation-for="StepLinks" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="TradeLinks" class="control-label">tradeLinks(split by ,)</label>
+                            <textarea asp-for="TradeLinks" rows="5" class="form-control"></textarea>
+                            <span asp-validation-for="TradeLinks" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Title2" class="control-label">Trade on Word Title</label>
+                            <input asp-for="Title2" class="form-control" />
+                            <span asp-validation-for="Title2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Text2" class="control-label">trade on word text</label>
+                            <input asp-for="Text2" class="form-control" />
+                            <span asp-validation-for="Text2" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FaceBook" class="control-label"></label>
+                            <input asp-for="FaceBook" class="form-control" />
+                            <span asp-validation-for="FaceBook" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="YouTube" class="control-label"></label>
+                            <input asp-for="YouTube" class="form-control" />
+                            <span asp-validation-for="YouTube" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Insta" class="control-label"></label>
+                            <input asp-for="Insta" class="form-control" />
+                            <span asp-validation-for="Insta" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Twiter" class="control-label"></label>
+                            <input asp-for="Twiter" class="form-control" />
+                            <span asp-validation-for="Twiter" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success notika-btn-success waves-effect">Edit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

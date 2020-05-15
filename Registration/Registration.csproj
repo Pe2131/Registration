@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Admin\assets\**" />
+    <Content Remove="wwwroot\Admin\assets\**" />
+    <EmbeddedResource Remove="wwwroot\Admin\assets\**" />
+    <None Remove="wwwroot\Admin\assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="PaulMiami.AspNetCore.Mvc.Recaptcha" Version="1.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\AdminPanel\Data\" />
+    <Folder Include="Areas\AdminPanel\Models\" />
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\build\js\countrySelect.js" />
+    <None Include="wwwroot\build\js\countrySelect.min.js" />
+    <None Include="wwwroot\countryCode\js\data.js" />
+    <None Include="wwwroot\countryCode\js\data.min.js" />
+    <None Include="wwwroot\countryCode\js\intlTelInput-jquery.js" />
+    <None Include="wwwroot\countryCode\js\intlTelInput-jquery.min.js" />
+    <None Include="wwwroot\countryCode\js\intlTelInput.js" />
+    <None Include="wwwroot\countryCode\js\intlTelInput.min.js" />
+    <None Include="wwwroot\countryCode\js\utils.js" />
+    <None Include="wwwroot\HomeStyle\fonts\fa-brands-400.svg" />
+    <None Include="wwwroot\HomeStyle\fonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\HomeStyle\fonts\fa-solid-900.svg" />
+    <None Include="wwwroot\HomeStyle\fonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\HomeStyle\fonts\open-sans-v17-latin-regular.woff2" />
+    <None Include="wwwroot\HomeStyle\fonts\work-sans-v5-latin-300.woff2" />
+    <None Include="wwwroot\HomeStyle\fonts\work-sans-v5-latin-700.woff2" />
+    <None Include="wwwroot\HomeStyle\fonts\work-sans-v5-latin-regular.woff2" />
+    <None Include="wwwroot\HomeStyle\img\in-404.svg" />
+    <None Include="wwwroot\HomeStyle\img\logo.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature1.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature2.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature3.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature4.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature5.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-feature6.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-image5.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-os1.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-os2.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-os3.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-stock1.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-stock2.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-stock3.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-content-stock4.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-footer-mastercard.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-footer-visa.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-mastercard.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-neteller.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-paypal.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-skrill.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-unionpay.svg" />
+    <None Include="wwwroot\HomeStyle\img\monee-payment-visa.svg" />
+    <None Include="wwwroot\HomeStyle\js\config-blog.js" />
+    <None Include="wwwroot\HomeStyle\js\config-peity.js" />
+    <None Include="wwwroot\HomeStyle\js\config.js" />
+    <None Include="wwwroot\HomeStyle\js\vendor\in-core.js" />
+    <None Include="wwwroot\HomeStyle\js\vendor\jquery.min.js" />
+    <None Include="wwwroot\HomeStyle\js\vendor\jquery.peity.min.js" />
+    <None Include="wwwroot\HomeStyle\js\vendor\plyr.min.js" />
+    <None Include="wwwroot\HomeStyle\js\vendor\uikit.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

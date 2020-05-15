@@ -1,0 +1,82 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "SubmitOrder";
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Premium HTML Template by Indonez">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4184dd" />
+    <!-- Site Properties -->
+    <title>Check Order</title>
+    <link rel="shortcut icon" href="/graph.png" type="~/HomeStyle/image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/HomeStyle/css/uikit.css">
+    <link rel="stylesheet" href="~/HomeStyle/css/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- section content begin -->
+        <div class="uk-section uk-padding-remove-vertical">
+            <div class="uk-container uk-container-expand">
+                <div class="uk-grid" data-uk-height-viewport="expand: true">
+                    <div class="uk-width-3-5@m uk-background-secondary uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge" style="background-image: url(../HomeStyle/img/check.jpg);">
+
+                    </div>
+                    <div class="uk-width-expand@m uk-flex uk-flex-middle">
+                        <div class="uk-width-1-1 uk-flex uk-flex-center">
+                            <div class="uk-width-3-5@m">
+                                <div class="uk-text-center in-padding-horizontal@s">
+                                    <a class="uk-logo uk-align-center uk-margin-remove-bottom" href="/Home">
+                                        <img src="~/HomeStyle/img/@ViewBag.Logo" data-src="/HomeStyle/img/@ViewBag.logo" width="120" height="54" alt="logo" data-uk-img>
+                                    </a>
+                                    <p class="uk-text-lead uk-margin-small-top uk-margin-medium-bottom">Check Your Order Status</p>
+                                    <!-- login form begin -->
+                                    <span asp-validation-summary="All"></span>
+                                    <form action="/Home/CheckOrder" method="post" id="login-form" class="uk-grid uk-form toggle-class">
+                                        <div class="uk-margin-small uk-width-1-1 uk-inline">
+                                            <span class="uk-form-icon uk-form-icon-flip fas fa-user fa-sm"></span>
+                                            <input class="uk-input" name="Code" id="username" value="" type="text" placeholder="Order ID" required>
+                                        </div>
+                                        <div class="uk-margin-small uk-width-1-1">
+                                            <button class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left" id="buttonsignin" type="submit" name="submit">Check</button>
+                                        </div>
+                                    </form>
+                                    <br />
+                                    @if (ViewBag.Days != null)
+                                    {
+                                        <div style="font-size:26px;font-weight:bold;color:green;">
+                                            @ViewBag.Days
+                                        </div>
+                                    }
+                                    @if (ViewBag.error != null)
+                                    {
+                                        <div style="font-size:26px;font-weight:bold;color:red;">
+                                            @ViewBag.error
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section content end -->
+    </main>
+
+    <!-- Javascript -->
+    <script src="~/HomeStyle/js/vendor/uikit.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/jquery.min.js"></script>
+    <script src="~/HomeStyle/js/vendor/in-core.js"></script>
+    <script src="~/HomeStyle/js/config.js"></script>
+</body>
+</html>

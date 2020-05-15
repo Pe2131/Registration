@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form action="{*Link*}" method="post" id="my_form">
+            <input type="hidden" name="LandingId" value={*Id*} />
+            <input type="hidden" name="Ip" id="ip" />
+            <input type="hidden" name="Country" id="Country" />
+            <input type="hidden" name="CallCode" id="CallCode" />
+            <input type="hidden" name="City" id="City" />
+            <input type="hidden" name="languages" id="languages" />
+            <input type="hidden" name="CountryCode" id="countryCode" />
+            <input type="hidden" name="Currency" id="Currency" />
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" name="name" />
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" type="text" name="LastName" />
+            </div>
+            <div class="form-group">
+
+                <label>Email</label>
+                <input class="form-control" type="email" name="Email" />
+            </div>
+            <div class="form-group">
+
+                <label>Phone</label>
+                <input class="form-control" type="text" name="Phone" id="phone" />
+            </div>
+            <button type="submit" class="btn btn-default" id="b1">Submit</button>
+            <div id="server-results"><!-- For server results --></div>
+        </form>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $.getJSON("https://ipapi.co//json", function (data) {
+                $("#ip").val(data.ip);
+                $("#Country").val(data.country_name);
+                $("#CallCode").val(data.country_calling_code);
+                $("#countryCode").val(data.country);
+                $("#languages").val(data.languages);
+                $("#phone").val(data.country_calling_code);
+                $("#City").val(data.city);
+                $("#Currency").val(data.currency);
+            });
+        </script>
+        <script>
+            $("#my_form").submit(function (event) {
+                event.preventDefault(); //prevent default action
+                $("#b1").prop("disabled", true);
+                var post_url = $(this).attr("action"); //get form action url
+                var form_data = $(this).serializeArray(); //Encode form elements for submission
+                var DataObject = {};
+                for (var a = 0; a < form_data.length; a++) DataObject[form_data[a].name] = form_data[a].value;
+                console.log(JSON.stringify(DataObject));
+                $.ajax({
+                    url: post_url,
+                    type: "Post",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(DataObject)
+                }).done(function (response) { //
+                    $("#server-results").html(response);
+                    $("#b1").prop("disabled", false);
+
+                });
+            });
+        </script>
+    </div>
+
+</body>
+</html>

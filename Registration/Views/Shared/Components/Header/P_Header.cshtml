@@ -1,0 +1,95 @@
+﻿@model Tb_Setting
+<header data-uk-sticky="top: 400; cls-active: in-sticky">
+    <!-- header content begin -->
+    <div class="uk-section uk-padding-remove-vertical">
+        <div class="uk-container">
+            <div class="uk-grid">
+                <div class="uk-width-1-2@m uk-width-1-2@s in-header-subnav">
+
+                </div>
+                <div class="uk-width-1-2@m uk-width-1-2@s in-header-button uk-visible@s">
+                    <div class="uk-flex uk-flex-right ">
+                        <a href="/Home/CheckOrder" class="uk-button uk-button-primary20 uk-button-small uk-border-rounded orderbtn"><i class="fas fa-lock fa-lg"></i>  Order Status</a>
+                        <a href="/Home/SubmitOrder" class="uk-button uk-button-primary10 uk-button-small uk-border-rounded orderbtn"><i class="fas fa-tag fa-lg"></i>  Order NOW </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="uk-grid uk-margin-remove-top">
+                <div class="uk-width-1-2 uk-width-expand@m">
+                    <!-- header logo begin -->
+                    <div class="in-header-logo uk-flex uk-flex-middle">
+                        <a class="uk-logo" href="/Home"><img src="HomeStyle/img/@Model.Logo" data-src="HomeStyle/img/@Model.Logo" width="120" height="54" alt="logo" data-uk-img></a>
+                    </div>
+                    <!-- header logo end -->
+                </div>
+                <div class="in-navbar-wrapper uk-width-1-2 uk-width-auto@m">
+                    <!-- main navigation begin -->
+                    <nav class="uk-navbar-container uk-visible@m" data-uk-navbar>
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Home/#resault">PERFORMANCE</a>
+                            </li>
+                            <li>
+                                <a href="/Home/#price">PRICE</a>
+                            </li>
+                            <li>
+                                <a href="/Home/#howto">HOW TO START</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Broker">BEST BROKERS</a>
+                            </li>
+                            <li>
+                                <a href="/Home/ContactUs">CONTACT US</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- main navigation end -->
+                    <!-- mobile navigation begin -->
+                    <div class="in-mobile-nav uk-height-1-1 uk-flex uk-flex-right uk-flex-middle uk-hidden@m">
+                        <a class="uk-button" href="#mobile-nav-modal" data-uk-toggle><i class="fas fa-bars"></i></a>
+                    </div>
+                    <div id="mobile-nav-modal" class="uk-modal-full" data-uk-modal>
+                        <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" data-uk-height-viewport>
+                            <button class="uk-modal-close-full uk-close-large fas fa-times" type="button"></button>
+                            <div class="uk-width-large uk-padding-large">
+                                <ul class="uk-nav-primary uk-nav-parent-icon in-margin-negative-top@s" data-uk-nav>
+                                    <li>
+                                        <a href="/">HOME</a>
+                                    </li>
+                                    @*<li>
+                                            <a href="/Home#resault">PERFORMANCE</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/Home#price">PRICE</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Home#howto">HOW TO START</a>
+                                        </li>*@
+                                    <li>
+                                        <a href="/Home/Broker">BEST BROKERS</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ContactUsForCustomer">SUPPORT</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/ContactUs">CONTACT US</a>
+                                    </li>
+                                </ul>
+                                <a href="/Home/SubmitOrder" class="uk-button uk-button-primary30 uk-border-rounded uk-align-center">Order Now <i class="fas fa-tag uk-margin-small-left"></i></a>
+                                <a href="/Home/CheckOrder" class="uk-button uk-button-primary40 uk-border-rounded uk-align-center">Order Status <i class="fas fa-lock uk-margin-small-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- mobile navigation end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header content end -->
+</header>

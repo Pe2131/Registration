@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- breadcrumb content begin -->
+<div class="uk-section uk-section-small">
+    <div class="uk-container">
+        <div class="uk-grid in-breadcrumb">
+            <div class="uk-width-1-1">
+                <ul class="uk-breadcrumb">
+                    <li><a href="/Home">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb content end -->
+<!-- section content begin -->
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid">
+            <div class="uk-width-3-5@m">
+                <h1 class="uk-margin-remove-bottom">Contact Us</h1>
+                <p class="uk-text-lead uk-margin-remove-top">Do not hesitate to reach out. Just fill in the contact form here and we’ll be sure to reply as fast as possible.</p>
+                <div class="uk-grid-divider uk-child-width-1-2@m uk-child-width-1-2@s uk-margin-medium-top uk-margin-bottom" data-uk-grid>
+                    <div>
+                        @*<h4>Public relations</h4>
+                            <p>For press, speaking or marketing related inquiries</p>*@
+                        <div class="uk-flex">
+                            <div class="in-top-offset-5">
+                                <i class="fas fa-envelope uk-icon-button fa-sm"></i>
+                            </div>
+                            <div class="uk-margin-small-left">
+                                <p>support@profitfactory.eu</p>
+                            </div>
+                        </div>
+                        @*<div class="uk-flex">
+                                <div class="in-top-offset-5">
+                                    <i class="fas fa-phone uk-icon-button fa-sm"></i>
+                                </div>
+                                <div class="uk-margin-small-left">
+                                    <p>@ViewBag.phone</p>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-expand@m">
+                @if (ViewBag.success != null)
+                {
+                    <span class="uk-label uk-label-success">Sent</span>
+                }
+                @if (ViewBag.error != null)
+                {
+                    <span class="uk-label uk-label-danger">Error</span>
+                }
+                <div asp-validation-summary="All"></div>
+                <div class="uk-card uk-card-secondary uk-margin-small-top">
+                    <div class="uk-card-body">
+                        <form action="/Home/ContactUs" method="post" id="contact-form" class="uk-form">
+                            <div class="uk-margin uk-width-1-1">
+                                <input class="uk-input" name="Name" id="name" value="" type="text" placeholder="Full name">
+                            </div>
+                            <div class="uk-margin uk-width-1-1">
+                                <input class="uk-input" name="Email" id="email" value="" type="email" placeholder="Email">
+                            </div>
+                            <div class="uk-margin uk-width-1-1">
+                                <input class="uk-input" name="Subject" id="subject" value="" type="text" placeholder="Subject">
+                            </div>
+                            <div class="uk-margin uk-width-1-1">
+                                <textarea class="uk-textarea" name="Text" id="message" rows="6" placeholder="Message"></textarea>
+                            </div>
+                            <div class="uk-margin uk-width-1-1">
+                                <recaptcha />
+                            </div>
+                            <div>
+                                <button class="uk-width-1-1 uk-button uk-button-primary uk-border-rounded uk-float-left" type="submit" name="submit">Send Message</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- section content end -->
+@section Scripts{
+    <recaptcha-script />
+}

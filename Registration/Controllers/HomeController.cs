@@ -189,14 +189,12 @@ namespace Registration.Controllers
                         $"<br><br>Thank you very much for your order at https://profitfactory.eu - part of (<b>World Outsourcing Services Ltd</b>)" +
                         $"<br> Your Order <b>ID</b> at Profitfactory.eu is: <b>{order.AccountNumber}</b> <br> Please make a note of your Order <b>ID</b> and quote it in any communication with us, no matter whether you contact us by Live chat or by e-mail or even if you are sending payments. Below you can find can find all payment options." +
                         $"<br><br> <b>Option 1 - Revolut :</b><br><br>" +
-                        $"Firstly you need to open App Store or Google Play and download the Revolut app. You can also sign up on the Revolut website here. https://www.revolut.com/" +
-                         "To Send money to Profitfactory Revolut   account you need to save that number in your phone: (<b>00359897601701</b>) than  Tap 'Payments' on the main navigation screen in the app and select 'Send money" +
-                         "Any friend with a Revolut account will have a blue 'R' next to their name.Next, select Profitfactory if tha's the name that you have save us in your phone , choose the currency, and enter in the amount you would like to send." +
-                         "<br><br> <b>Option 2 - Details For Wire Transfer:</b> <br><br>" +
+                        $"<b>Beneficiary: World Outsourcing Services Ltd.</b><br><b>IBAN: GB52 REVO 0099 6927 4762 17</b><br><b>BIC: REVOGB21</b><br><b>Beneficiary address: 1616, Detski Mir 12, Sofia, Bulgaria</b><br><b>Bank / Payment institution: Revolut</b>"+
+                        "<br><br> <b>Option 2 - Details For Wire Transfer:</b> <br><br>" +
                          "<b>Account Name: World Outsourcing Services Ltd</b><br><b>Bank Name: United Bulgarian Bank</b> <br> <b>IBAN: BG18UBBS80021453642710</b> <br> <b>BIC / SWIFT: UBBSBGSF</b> <br><b>Bank Address & Branch :Bulgaria, Sofia, bul.Vitosha 89b</b>"+
-                         "<br><br> <b>Option 3 - SKRILL :</b> :<br><br> skrill email profitfactory@protonmail.com <br><br>" +
+                         "<br><br>" +
                         $"Please note that we can only start with the setup of your order once we have received the initial payment. After we have received your payment, we will send you a separate e-mail. It will then take one day until everything has been completed and we will send you the Software file." +
-                        $"We therefore would like to ask you to transfer the amount of <b>\"{price}\"EUR</b> to one of the options above if you choose <b>Option 1 or Option 2 </b> use Order <b>ID</b> as subject for the transfer.If you choose <b>Option 3 please inform our support.</b><br>This will make it easier for us to allocate the payment and thus speed up the setup process." +
+                        $"We therefore would like to ask you to transfer the amount of <b>\"{price}\"EUR</b> to one of the options above , using your <b>Order ID</b> as subject for the transfer.<br>This will make it easier for us to allocate the payment and thus speed up the setup process." +
                         "<br><br> Thank you very much!<br>Team Profitfactory.eu"
                         );
                     return View();

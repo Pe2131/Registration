@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository.InterFace;
 
 namespace Registration.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
-    [authorize]
+    [Authorize(Roles = "Admin,Suport")]
     public class ContactUsController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

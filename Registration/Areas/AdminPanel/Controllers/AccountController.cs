@@ -80,6 +80,7 @@ namespace Registration.Areas.AdminPanel.Controllers
                         await _signInManager.SignOutAsync();
                         return View(model);
                     }
+                    if (await _userManager.IsInRoleAsync(user,"Suport")) { return RedirectToAction("Index", "Order", new { Areas = "AdminPanel" }); }
                     _logger.LogInformation("User logged in.");
                     return RedirectToLocal(returnUrl);
                 }
@@ -221,7 +222,6 @@ namespace Registration.Areas.AdminPanel.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -229,7 +229,6 @@ namespace Registration.Areas.AdminPanel.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {

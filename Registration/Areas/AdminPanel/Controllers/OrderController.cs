@@ -16,7 +16,7 @@ using Service;
 namespace Registration.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
-    [Authorize]
+    [Authorize(Roles = "Admin,Suport")]
     public class OrderController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

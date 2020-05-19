@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class ini : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,7 +53,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
                     Subject = table.Column<string>(nullable: false),
@@ -70,7 +70,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     Code = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
@@ -88,7 +88,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FullName = table.Column<string>(nullable: false),
                     AccountNumber = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: false),
@@ -112,7 +112,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Logo = table.Column<string>(nullable: true),
                     TradeLinks = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
@@ -144,7 +144,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(maxLength: 800, nullable: false),
                     Title2 = table.Column<string>(nullable: true),
                     ImageName = table.Column<string>(nullable: true)
@@ -159,7 +159,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -180,7 +180,7 @@ namespace DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
@@ -263,27 +263,18 @@ namespace DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Tb_Sliders",
                 columns: new[] { "Id", "ImageName", "Title", "Title2" },
-                values: new object[] { 1, "profitfactory-slider3.jpg", "Best Auto Trading Softwares.", "AI Automatic Trading Algorithms & Strategies" });
-
-            migrationBuilder.InsertData(
-                table: "Tb_Sliders",
-                columns: new[] { "Id", "ImageName", "Title", "Title2" },
-                values: new object[] { 2, "profitfactory-slider4.jpg", "Low Risk Automatic Trading.", "Robot Will Do All Your Risk Managment By Your Choose" });
-
-            migrationBuilder.InsertData(
-                table: "Tb_Sliders",
-                columns: new[] { "Id", "ImageName", "Title", "Title2" },
-                values: new object[] { 3, "profitfactory-slider5.jpg", "Only You Have Access To Your Funds", "You Can Choose Your Broker , Account Type and All Your Deposit & Withdrawal Process" });
-
-            migrationBuilder.InsertData(
-                table: "Tb_Sliders",
-                columns: new[] { "Id", "ImageName", "Title", "Title2" },
-                values: new object[] { 4, "profitfactory-slider6.jpg", "Trade Currencies , Gold , Oil , CFDs", "You can Trade All Assets Automatically" });
+                values: new object[,]
+                {
+                    { 1, "profitfactory-slider3.jpg", "Best Auto Trading Softwares.", "AI Automatic Trading Algorithms & Strategies" },
+                    { 2, "profitfactory-slider4.jpg", "Low Risk Automatic Trading.", "Robot Will Do All Your Risk Managment By Your Choose" },
+                    { 3, "profitfactory-slider5.jpg", "Only You Have Access To Your Funds", "You Can Choose Your Broker , Account Type and All Your Deposit & Withdrawal Process" },
+                    { 4, "profitfactory-slider6.jpg", "Trade Currencies , Gold , Oil , CFDs", "You can Trade All Assets Automatically" }
+                });
 
             migrationBuilder.InsertData(
                 table: "tb_Settings",
                 columns: new[] { "Id", "Email", "FaceBook", "Footer", "Insta", "Logo", "Phone", "StepLinks", "Steps", "Text1", "Text2", "Text3", "Text4", "Title1", "Title2", "Title3", "Title4", "TradeLinks", "TradePrice", "Twiter", "YouTube" },
-                values: new object[] { 1, "Email.Email.com", "https://www.facebook.com/Copytradingservices/", "* Risk Warning: Trading / CFDs are complex instruments that come with a high risk of rapidly losing money due to leverage. . It is desirable that investors who would consider EA trading, to do so only with the money that they can afford to lose. Please note that even knowledgeable and well-experienced investors can experience large potential losses.Past performance of Profitfactory Software is not a reliable indicator of his future performance.", "https://www.instagram.com/profitfactory.eu", "profit-logo.png", "+123456789", "#,#,#", "OPEN AN ACCOUNT WITH ONE OF OUR SUPPORTED BROKERS. OR, IF YOU ALREADY HAVE A REAL TRADING ACCOUNT YOU CAN JUMP TO STEP TWO. * CHOOSE YOUR SUBSCRIPRION PLAN , THEN JUST FOLLOW THE REGISTRATION STEPS AND FILL UP THE REGISTRATION FIELDS, SO OUR OPERATION DEPARTMENT CAN ADJUST THE SETTINGS TO OBTAIN THE SOFTWARE LICENSE FOR YOUR ACCOUNT. * WITH IN 24 HOURS YOU WILL RECEIVE SOFTWARE FILE AND VIDEO GUIDE BY EMAIL. RUN OUR AUTOMATIC TRADING SOFTWARE. SIT, RELAX AND ENJOY YOUR FUTURE POTENTIAL RESULTS.", "Choose your MONTHLY or YEARLY plan and Start your trading in just few minutes", "we support all meta trader 4 Accounts Types", "We Develop Best Automatic Trading Softwares , That You Can Run It On The All Meta Trade 4 Trading Accounts", "Dont Waste Your Time , In Just 3 Steps You Can Start Trading By Our MT4 Expert Advisor", "Plans & Prices", "Trade on world class platforms", "Why You Should Choose Our Software", "HOW TO START ?", "https://www.myfxbook.com/members/ProfitfactoryEA/multi-asset-25k/5558985,https://www.myfxbook.com/members/ProfitfactoryEA/gold-oil-10k/5573608,https://www.myfxbook.com/members/ProfitfactoryEA/currencies-5k/5573685,https://www.myfxbook.com/members/ProfitfactoryEA/beginner-1k/5573713", "89.99", "twiter.com", "https://www.youtube.com/channel/UChMVaLmHsher5JVXt2zCgoA/?guided_help_flow=5" });
+                values: new object[] { 1, "Email.Email.com", "https://www.facebook.com/Copytradingservices/", "* Risk Warning: Trading / CFDs are complex instruments that come with a high risk of rapidly losing money due to leverage. . It is desirable that investors who would consider EA trading, to do so only with the money that they can afford to lose. Please note that even knowledgeable and well-experienced investors can experience large potential losses.Past performance of Profitfactory Software is not a reliable indicator of his future performance.", "https://www.instagram.com/profitfactory.eu", "profit-logo.png", "+123456789", "#,#,#", "OPEN AN ACCOUNT WITH ONE OF OUR SUPPORTED BROKERS. OR, IF YOU ALREADY HAVE A REAL TRADING ACCOUNT YOU CAN JUMP TO STEP TWO. * CHOOSE YOUR SUBSCRIPRION PLAN , THEN JUST FOLLOW THE REGISTRATION STEPS AND FILL UP THE REGISTRATION FIELDS, SO OUR OPERATION DEPARTMENT CAN ADJUST THE SETTINGS TO OBTAIN THE SOFTWARE LICENSE FOR YOUR ACCOUNT. * WITH IN 24 HOURS YOU WILL RECEIVE SOFTWARE FILE AND VIDEO GUIDE BY EMAIL. RUN OUR AUTOMATIC TRADING SOFTWARE. SIT, RELAX AND ENJOY YOUR FUTURE POTENTIAL RESULTS.", "Choose your MONTHLY or YEARLY plan and Start your trading in just few minutes", "we support all meta trader 4 Accounts Types", "We Develop Best Automatic Trading Softwares , That You Can Run It On The All Meta Trade 4 Trading Accounts", "Dont Waste Your Time , In Just 3 Steps You Can Start Trading By Our MT4 Expert Advisor", "Plans & Prices", "Trade on world class platforms", "Why You Should Choose Our Software", "HOW TO START ?", "https://www.myfxbook.com/members/ProfitfactoryEA/multi-asset-25k/5558985,https://www.myfxbook.com/members/ProfitfactoryEA/gold-oil-10k/5573608,https://www.myfxbook.com/members/ProfitfactoryEA/currencies-5k/5573685,https://www.myfxbook.com/members/ProfitfactoryEA/beginner-1k/5573713", "99", "twiter.com", "https://www.youtube.com/channel/UChMVaLmHsher5JVXt2zCgoA/?guided_help_flow=5" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -294,7 +285,8 @@ namespace DAL.Migrations
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
                 column: "NormalizedName",
-                unique: true);
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUserClaims_UserId",
@@ -320,7 +312,8 @@ namespace DAL.Migrations
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
-                unique: true);
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

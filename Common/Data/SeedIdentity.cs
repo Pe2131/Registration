@@ -27,6 +27,7 @@ namespace Common.Data
         {
             await _roleManager.CreateAsync(new IdentityRole("Admin"));
             await _roleManager.CreateAsync(new IdentityRole("User"));
+            await _roleManager.CreateAsync(new IdentityRole("Suport"));
         }
         private async Task SeedUsers()
         {
@@ -41,6 +42,18 @@ namespace Common.Data
                 };
                 await _userManager.CreateAsync(Admin, "Admin@123456");
                 await _userManager.AddToRoleAsync(Admin, "Admin");
+            }
+            var support = await _userManager.FindByNameAsync("admin@support.com");
+            if (support == null)
+            {
+                var Support = new ApplicationUser
+                {
+                    Email = "admin@support.com",
+                    UserName = "admin@support.com",
+                    IsActive = true
+                };
+                await _userManager.CreateAsync(Support, "Admin@123456");
+                await _userManager.AddToRoleAsync(Support, "Suport");
             }
         }
     }

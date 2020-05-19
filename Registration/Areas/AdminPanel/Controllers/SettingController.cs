@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Common.Images;
 using DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository.InterFace;
@@ -12,7 +13,7 @@ using Repository.InterFace;
 namespace Registration.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
-    [authorize]
+    [Authorize(Roles ="Admin")]
     public class SettingController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

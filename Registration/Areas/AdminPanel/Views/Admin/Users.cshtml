@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/Admin/css/jquery.dataTables.min.css">
+}
+<div class="data-table-area">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2>Users</h2>
+                        @*<p>It's just that simple. Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</p>*@
+                    </div>
+                    <div class="table-responsive">
+                        <table id="data-table-basic" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.UserName)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Email)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.UserName)
+                                        </td>
+                                        <td>
+                                            <a asp-area="Adminpanel" asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="~/Admin/js/data-table/jquery.dataTables.min.js"></script>
+    <script src="~/Admin/js/data-table/data-table-act.js"></script>
+    <script>
+        function ShowModal(id, email) {
+            $("#myId").val(id);
+            $("#email").val(email);
+            $("#myModalone").modal();
+        }
+    </script>
+}
+

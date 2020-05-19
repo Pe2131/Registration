@@ -13,7 +13,7 @@ using Repository.InterFace;
 namespace Registration.Areas.AdminPanel.Controllers
 {
     [Area("AdminPanel")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class SliderController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
